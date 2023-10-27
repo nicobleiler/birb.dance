@@ -10,7 +10,7 @@ let original;
 let flipped;
 
 (async () => {
-  const framesPath = 'frames';
+  const framesPath = 'frames/cockatiel';
   const files = await fs.readdir(framesPath);
 
   original = await Promise.all(files.map(async (file) => {
@@ -82,7 +82,7 @@ const server = http.createServer((req, res) => {
     req.headers['user-agent'] &&
     !req.headers['user-agent'].includes('curl')
   ) {
-    res.writeHead(302, { Location: 'https://github.com/hugomd/parrot.live' });
+    res.writeHead(302, { Location: 'https://github.com/nicobleiler/birb.dance' });
     return res.end();
   }
 
