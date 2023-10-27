@@ -14,8 +14,6 @@ curl birb.dance
 
 # Thanks
 * [hugomd](https://github.com/hugomd) for [`parrot.live`](https://github.com/hugomd/parrot.live), and for the code
-* [jmhobbs](https://github.com/jmhobbs) for [`terminal-parrot`](https://github.com/jmhobbs/terminal-parrot), and for the animation frames
-* [Robert Koch](https://github.com/kochie/) and [Eric Jiang](https://github.com/lorderikir) for testing it, and giving feedback ⭐
 
 # More Birbs
 * [cultofthepartyparrot.com](http://cultofthepartyparrot.com/)
