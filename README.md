@@ -1,10 +1,10 @@
-# parrot.live
+# birb.dance
 
-An initiative, using frames from [`terminal-parrot`](https://github.com/jmhobbs/terminal-parrot), to allow any computer with `curl` to display an _animated_ party parrot.
+An initiative, using code from [`parrot.live`](https://github.com/hugomd/parrot.live), to allow any computer with `curl` to display _animated_ birbs.
 
 # Try it!
 ```bash
-curl parrot.live
+curl birb.dance
 ```
 
 # :partyparrot:
@@ -13,10 +13,11 @@ curl parrot.live
 </div>
 
 # Thanks
+* [hugomd](https://github.com/hugomd) for [`parrot.live`](https://github.com/hugomd/parrot.live), and for the code
 * [jmhobbs](https://github.com/jmhobbs) for [`terminal-parrot`](https://github.com/jmhobbs/terminal-parrot), and for the animation frames
 * [Robert Koch](https://github.com/kochie/) and [Eric Jiang](https://github.com/lorderikir) for testing it, and giving feedback ⭐
 
-# More Parrots
+# More Birbs
 * [cultofthepartyparrot.com](http://cultofthepartyparrot.com/)
 * [`terminal-parrot`](https://github.com/jmhobbs/terminal-parrot)
 * [`parrotsay`](https://github.com/matheuss/parrotsay)
