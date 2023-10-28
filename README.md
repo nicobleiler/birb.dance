@@ -1,6 +1,9 @@
 # birb.dance
-[![Build Status Github Actions](https://img.shields.io/github/actions/workflow/status/nicobleiler/birb.dance/docker-publish.yml)](https://github.com/nicobleiler/birb.dance/actions/workflows/docker-publish.yml)
-[![Dockerhub](https://img.shields.io/docker/pulls/nicobleiler/birb.dance)](https://hub.docker.com/r/nicobleiler/birb.dance)
+[![Build Status GitHub Actions](https://img.shields.io/github/actions/workflow/status/nicobleiler/birb.dance/docker-publish.yml.svg)](https://github.com/nicobleiler/birb.dance/actions/workflows/docker-publish.yml)
+[![Docker Pulls](https://img.shields.io/docker/pulls/nicobleiler/birb.dance.svg)](https://hub.docker.com/r/nicobleiler/birb.dance)
+[![Docker Stars](https://img.shields.io/docker/stars/nicobleiler/birb.dance.svg?maxAge=2592000)](https://hub.docker.com/r/nicobleiler/birb.dance/)
+[![GitHub Issues](https://img.shields.io/github/issues-raw/nicobleiler/birb.dance.svg)](https://github.com/nicobleiler/birb.dance/issues)
+[![buymeacoffee](https://img.shields.io/badge/Donate-Buy%20me%20a%20coffee-orange.svg)](https://www.buymeacoffee.com/nicobleiler)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/nicobleiler/birb.dance/blob/master/LICENSE.md)
 
 An initiative, using code from [`parrot.live`](https://github.com/hugomd/parrot.live), to allow any computer with `curl` to display _animated_ birbs.
