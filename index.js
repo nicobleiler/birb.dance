@@ -99,7 +99,8 @@ const validateBirb = (pathname) => {
     console.log("Could not match a birb, using default:", birb);
   } else {
     birb = birbs[0];
-    console.log("Could not match a birb, falling back to:", birb);
+    console.log("Could not match a birb and default birb is faulty, falling back to:", birb);
+    console.log(`"DEFAULT_BIRB" is set to "${process.env.DEFAULT_BIRB}", but available birbs are:`, birbs.toString());
   }
 
   return birb;
