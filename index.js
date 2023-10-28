@@ -4,7 +4,6 @@ const http = require('http');
 const { URL } = require('url');
 const { Readable } = require('stream');
 const colors = require('colors/safe');
-const { debug } = require('console');
 
 // Setup frames in memory
 const birbs = ['cockatiel', 'parrot'];
@@ -76,28 +75,28 @@ const streamer = (stream, opts, birb) => {
 };
 
 const validateQuery = (searchParams) => {
-  console.debug("Parsing options:", searchParams.toString());
+  console.log("Parsing options:", searchParams.toString());
   let flipped = searchParams.get('flipped');
   let fps = searchParams.get('fps');
   let options = {
     flipped: String(flipped).toLowerCase() === 'true',
     fps: Number(fps) >= 1 ? fps : 24
   }
-  console.debug("Options", options);
+  console.log("Options", options);
   return options
 };
 
 const validateBirb = (pathname) => {
-  console.debug("Checking path for valid birb:", pathname);
+  console.log("Checking path for valid birb:", pathname);
   let basePath = pathname.substring(1).split("/")[0];
   let birb;
 
   if(birbs.includes(basePath)) {
     birb = basePath;
-    console.debug("Matched birb, say hello to:", birb);
+    console.log("Matched birb, say hello to:", birb);
   } else {
     birb = birbs[0];
-    console.debug("Could not match a birb, falling back to:", birb);
+    console.log("Could not match a birb, falling back to:", birb);
   }
 
   return birb;
@@ -134,7 +133,8 @@ const server = http.createServer((req, res) => {
 });
 
 const port = process.env.BIRB_PORT || 3000;
-server.listen(port, err => {
+const host = process.env.BIRB_HOST || "0.0.0.0";
+server.listen(port, host, err => {
   if (err) throw err;
-  console.log(`Listening on localhost:${port}`);
+  console.log(`Listening on ${host}:${port}`);
 });
