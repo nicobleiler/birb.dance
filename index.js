@@ -94,6 +94,9 @@ const validateBirb = (pathname) => {
   if(birbs.includes(basePath)) {
     birb = basePath;
     console.log("Matched birb, say hello to:", birb);
+  } else if(birbs.includes(process.env.DEFAULT_BIRB)) {
+    birb = process.env.DEFAULT_BIRB;
+    console.log("Could not match a birb, using default:", birb);
   } else {
     birb = birbs[0];
     console.log("Could not match a birb, falling back to:", birb);
@@ -108,11 +111,13 @@ const server = http.createServer((req, res) => {
 
   if (url.pathname === '/healthcheck') {
     res.writeHead(200, { 'Content-Type': 'application/json' });
+    console.groupEnd();
     return res.end(JSON.stringify({status: 'ok'}));
   }
 
   if (!req?.headers['user-agent']?.includes('curl')) {
     res.writeHead(302, { Location: 'https://github.com/nicobleiler/birb.dance' });
+    console.groupEnd();
     return res.end();
   }
 
