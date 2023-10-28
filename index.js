@@ -111,11 +111,7 @@ const server = http.createServer((req, res) => {
     return res.end(JSON.stringify({status: 'ok'}));
   }
 
-  if (
-    req.headers &&
-    req.headers['user-agent'] &&
-    !req.headers['user-agent'].includes('curl')
-  ) {
+  if (!req?.headers['user-agent']?.includes('curl')) {
     res.writeHead(302, { Location: 'https://github.com/nicobleiler/birb.dance' });
     return res.end();
   }
@@ -132,7 +128,7 @@ const server = http.createServer((req, res) => {
   console.groupEnd();
 });
 
-const port = process.env.BIRB_PORT || 3000;
+const port = process.env.BIRB_PORT || 80;
 const host = process.env.BIRB_HOST || "0.0.0.0";
 server.listen(port, host, err => {
   if (err) throw err;
