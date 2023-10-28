@@ -11,11 +11,16 @@ An initiative, using code from [`parrot.live`](https://github.com/hugomd/parrot.
 # Try it!
 ```bash
 curl birb.dance
+# Use extra options to change fps, birb or flip the birb
+curl birb.dance/parrot?fps=5
+# To use multiple options at the same time you have to escape the `&` or put the whole url in quotes
+curl birb.dance/parrot?fps=5\&flipped=true
+curl "birb.dance/parrot?fps=5&flipped=true"
 ```
 
-# :partyparrot:
+# :partybirb:
 <div align="center">
-  <img src='https://d.pr/i/jKluc0.gif' />
+  <img src='https://github.com/nicobleiler/birb.dance/blob/master/img/birb.dance.gif' />
 </div>
 
 # Thanks
