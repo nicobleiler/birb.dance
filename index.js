@@ -80,7 +80,7 @@ const validateQuery = (searchParams) => {
   let fps = searchParams.get('fps');
   let options = {
     flipped: String(flipped).toLowerCase() === 'true',
-    fps: Number(fps) >= 1 ? fps : 24
+    fps: Number(fps) >= 1 && Number(fps) <= 100 ? fps : 24
   }
   console.log("Options", options);
   return options
