@@ -139,4 +139,5 @@ const host = process.env.BIRB_HOST || "0.0.0.0";
 server.listen(port, host, err => {
   if (err) throw err;
   console.log(`Listening on ${host}:${port}`);
+  console.log('Available birbs are:', birbs.toString());
 });
