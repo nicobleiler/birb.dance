@@ -1,43 +1,36 @@
-# Build the first stage with alpine node image and name as build
-FROM node:18-alpine3.17 as build
+#######################################
+# Build stage
+#######################################
+FROM node:21-alpine as builder
 
-# update and install the latest dependencies on docker base image
-# Add non root user to the docker image and set the user
-RUN apk update && apk upgrade && adduser -D svelteuser
-USER svelteuser
-
-# set work dir as app
 WORKDIR /app
 
-# copy the sveltkit project content with proper permission for the user svelteuser
-COPY --chown=svelteuser:svelteuser . /app
+# install npm dependencies (cache first)
+COPY package*.json ./
 
-# install all the project npm dependencies and 
-# build the svelte project to generate the artifacts in build directory
-RUN npm install && npm run build
+# copy remaining files
+COPY . .
 
-# we are using multi stage build process to keep the image size as small as possible
-FROM node:18-alpine3.17
-# update and install latest dependencies, add dumb-init package
-# add and set non root user
-RUN apk update && apk upgrade && apk add dumb-init && adduser -D svelteuser
-USER svelteuser
+# build app
+RUN npm run build
 
-# set work dir as app
+#######################################
+# Serve stage
+#######################################
+FROM node:21-alpine
+
 WORKDIR /app
 
-# copy the build directory to the /app directory of second stage 
-COPY --chown=svelteuser:svelteuser --from=build /app/build /app/package.json ./
+COPY --from=builder /app/package.json .
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/build ./build
+COPY --from=builder /app/scripts/server.js ./scripts/
 
-# expose 8080 on container
 EXPOSE 80
 
-# set app host and port and env as production
-ENV HOST=0.0.0.0 PORT=80 NODE_ENV=production
-
-# allow color
 ENV TERM="xterm-256color"
 
-# start the app with dumb init to spawn the Node.js runtime process
-# with signal support
-CMD ["dumb-init","node","index.js"]
+ARG DEFAULT_BIRB
+ENV DEFAULT_BIRB=$DEFAULT_BIRB
+
+CMD ["node", "scripts/server.js"]
