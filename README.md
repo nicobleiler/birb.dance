@@ -20,7 +20,7 @@ curl "birb.dance/parrot?fps=5&flipped=true"
 
 # :partybirb:
 <div align="center">
-  <img src='https://github.com/nicobleiler/birb.dance/blob/master/img/birb.dance.gif' />
+  <img src='https://github.com/nicobleiler/birb.dance/blob/master/docs/birb.dance.gif' />
 </div>
 
 # Thanks
