@@ -1,7 +1,11 @@
-node_modules
-npm-debug.log
-img
-.prettierrc
-.gitignore
-.git
-.github
+# common
+**/.git/
+**/node_modules/
+**/.svelte-kit/
+
+# frontend (root)
+build/
+tests/
+docs/
+Dockerfile
+docker-compose.yml
