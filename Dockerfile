@@ -15,6 +15,9 @@ COPY . .
 # build app
 RUN npm run build
 
+# test
+RUN ls -hal
+
 #######################################
 # Serve stage
 #######################################
