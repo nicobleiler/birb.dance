@@ -3,7 +3,6 @@
     // @ts-ignore
 	import { Screen } from 'svelte-preview-ui'
 	import Convert from 'ansi-to-html';
-	import { marked } from 'marked';
 
 	var convert = new Convert({
         fg: '#FFF',
