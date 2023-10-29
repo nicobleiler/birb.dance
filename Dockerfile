@@ -25,7 +25,6 @@ WORKDIR /app
 COPY --from=builder /app/package.json .
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/build ./build
-COPY --from=builder /app/scripts/server.js ./scripts/
 
 EXPOSE 3000
 
@@ -33,4 +32,4 @@ ENV TERM="xterm-256color"
 ARG DEFAULT_BIRB
 ENV DEFAULT_BIRB=$DEFAULT_BIRB
 
-CMD ["node", "scripts/server.js"]
+CMD ["node", "build"]
