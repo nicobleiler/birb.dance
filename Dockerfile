@@ -27,8 +27,7 @@ WORKDIR /app
 
 COPY --from=builder /app/package.json .
 COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/build ./build
-COPY --from=builder /app/scripts/server.js ./scripts/
+COPY --from=builder /app/.svelte-kit/output ./build
 
 EXPOSE 80
 
@@ -37,4 +36,4 @@ ENV TERM="xterm-256color"
 ARG DEFAULT_BIRB
 ENV DEFAULT_BIRB=$DEFAULT_BIRB
 
-CMD ["node", "scripts/server.js"]
+CMD ["node", "build/server/index.js"]
