@@ -1,9 +1,12 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { SvelteComponent, onMount } from 'svelte';
     // @ts-ignore
-	import { Screen } from 'svelte-preview-ui'
+	import { Screen } from 'svelte-preview-ui';
 	import Convert from 'ansi-to-html';
+	import Terminal from '$lib/Terminal.svelte';
 
+	// var Terminal: Terminal;
+	var terminal: SvelteComponent;
 	var convert = new Convert({
         fg: '#FFF',
         bg: '#000',
@@ -26,14 +29,10 @@
 		const response = await fetch(url);
         if(response === null || response.body === null) return;
 		const reader = response.body.pipeThrough(new TextDecoderStream()).getReader();
-		while (true) {
+		while(true) {
 			const { value, done } = await reader?.read();
 			if (done) break;
-			if (value.includes("\x1b[2J\x1b[3J\x1b[H")) {
-                frame = "";
-			} else {
-                frame += convert.toHtml(value);
-            }
+			await terminal.write(value);
 		}
 	}
 
@@ -42,13 +41,9 @@
 
 <Screen class="screen" tabs={["Terminal", "About"]} bind:activeTab>
     {#if activeTab == "Terminal"}
-    <div id="terminal">
-        {@html frame}
-    </div>
-    {:else if activeTab == "About"}
-    <div id="about">        
-        {@html "About"}
-    </div>
+		<div id="terminal">
+			<Terminal bind:this={terminal}/>
+		</div>
     {/if}
 </Screen>
 
