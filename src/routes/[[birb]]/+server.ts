@@ -78,7 +78,8 @@ export function GET(event: RequestEvent) {
     console.log("ClientAddress", event.getClientAddress());
     const encoder = new TextEncoder();
     const readable = new ReadableStream({
-        async start(controller) {           
+        async start(controller) {
+            const client: string = event.getClientAddress();
             const path: string = (event.url.pathname == "/") ? "" : event.url.pathname;
             let birb: string = event.params.birb ? event.params.birb : "";
             birb = validateBirb(birb);
@@ -90,10 +91,10 @@ export function GET(event: RequestEvent) {
             let color: string = getRandomColor();
             let birbIndex: number = 0;
             const options = getOptions(event.url.searchParams);
-            
+
             controller.enqueue(encoder.encode(clearTerminal));
             await delay(5);
-            controller.enqueue(encoder.encode(`[root@localhost ~] $ `));
+            controller.enqueue(encoder.encode(`[root@${client} ~] $ `));
             await delay(1000);
             for (const letter of introText) {
                 controller.enqueue(encoder.encode(colors["white"](letter)));
