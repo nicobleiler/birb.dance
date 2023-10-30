@@ -6,7 +6,8 @@
 [![buymeacoffee](https://img.shields.io/badge/Donate-Buy%20me%20a%20coffee-orange.svg)](https://www.buymeacoffee.com/nicobleiler)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/nicobleiler/birb.dance/blob/master/LICENSE.md)
 
-An initiative, using code from [`parrot.live`](https://github.com/hugomd/parrot.live), to allow any computer with `curl` to display _animated_ birbs.
+An initiative, inspired by [`parrot.live`](https://github.com/hugomd/parrot.live), to allow any computer with `curl` to display _animated_ birbs.
+Additionally you view a simulated terminal in the `browser` [`birb.dance`](https://birb.dance) to enjoy all the birbs you could ever want.
 
 # Try it!
 ```bash
@@ -14,17 +15,17 @@ curl birb.dance
 # Use extra options to change fps, birb or flip the birb
 curl birb.dance/parrot?fps=5
 # To use multiple options at the same time you have to escape the `&` or put the whole url in quotes
-curl birb.dance/parrot?fps=5\&flipped=true
-curl "birb.dance/parrot?fps=5&flipped=true"
+curl birb.dance/parrot?fps=5\&flipped
+curl "birb.dance/parrot?fps=5&flipped"
 ```
 
 # :partybirb:
 <div align="center">
-  <img src='https://github.com/nicobleiler/birb.dance/blob/master/docs/birb.dance.gif' />
+  <img src='https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmVoMnVrNHVieHBtYjRhcjVsODJ5YjFyZXdwczJrcGVuN2F4NDMyOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/v9wpxJDQ2LPq52OMlJ/giphy.gif' />
 </div>
 
 # Thanks
-* [hugomd](https://github.com/hugomd) for [`parrot.live`](https://github.com/hugomd/parrot.live), and for the code
+* [hugomd](https://github.com/hugomd) for [`parrot.live`](https://github.com/hugomd/parrot.live), and for idea
 
 # More Birbs
 * [cultofthepartyparrot.com](http://cultofthepartyparrot.com/)
