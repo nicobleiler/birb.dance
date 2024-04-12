@@ -1,5 +1,5 @@
 # birb.dance
-[![Website Status](https://uptime.bleiler.dev/api/badge/41/uptime?labelPrefix=Demo+)](https://birb.dance)
+[![Website Status](https://uptime.bleiler.dev/api/badge/41/uptime?labelPrefix=Demo+)](https://birb.dance/parrot?fps=10&flipped)
 [![Build Status GitHub Actions](https://img.shields.io/github/actions/workflow/status/nicobleiler/birb.dance/docker-publish.yml.svg)](https://github.com/nicobleiler/birb.dance/actions/workflows/docker-publish.yml)
 [![Docker Pulls](https://img.shields.io/docker/pulls/nicobleiler/birb.dance.svg)](https://hub.docker.com/r/nicobleiler/birb.dance)
 [![Docker Stars](https://img.shields.io/docker/stars/nicobleiler/birb.dance.svg?maxAge=2592000)](https://hub.docker.com/r/nicobleiler/birb.dance/)
@@ -8,7 +8,7 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/nicobleiler/birb.dance/blob/master/LICENSE.md)
 
 An initiative, inspired by [`parrot.live`](https://github.com/hugomd/parrot.live), to allow any computer with `curl` to display _animated_ birbs.
-Additionally you view a simulated terminal in the `browser` [`birb.dance`](https://birb.dance) to enjoy all the birbs you could ever want.
+Additionally you view a simulated terminal in the `browser` [`birb.dance`](https://birb.dance/parrot?fps=10&flipped) to enjoy all the birbs you could ever want.
 
 # Try it!
 ```bash
