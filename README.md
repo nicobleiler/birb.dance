@@ -1,4 +1,5 @@
 # birb.dance
+[![Website Status](https://uptime.bleiler.dev/api/badge/41/ping)](https://birb.dance)
 [![Build Status GitHub Actions](https://img.shields.io/github/actions/workflow/status/nicobleiler/birb.dance/docker-publish.yml.svg)](https://github.com/nicobleiler/birb.dance/actions/workflows/docker-publish.yml)
 [![Docker Pulls](https://img.shields.io/docker/pulls/nicobleiler/birb.dance.svg)](https://hub.docker.com/r/nicobleiler/birb.dance)
 [![Docker Stars](https://img.shields.io/docker/stars/nicobleiler/birb.dance.svg?maxAge=2592000)](https://hub.docker.com/r/nicobleiler/birb.dance/)
