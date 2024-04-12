@@ -29,7 +29,7 @@ curl "birb.dance/parrot?fps=5&flipped"
 * [hugomd](https://github.com/hugomd) for [`parrot.live`](https://github.com/hugomd/parrot.live), and for idea
 
 # More Birbs
-* [cultofthepartyparrot.com](http://cultofthepartyparrot.com/)
+* [`cultofthepartyparrot.com`](http://cultofthepartyparrot.com/)
 * [`terminal-parrot`](https://github.com/jmhobbs/terminal-parrot)
 * [`parrotsay`](https://github.com/matheuss/parrotsay)
 * [`ascii.live`](https://github.com/hugomd/ascii.live)
